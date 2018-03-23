@@ -8,6 +8,26 @@ let add = () => {
         alert("The roll number of multiple students cannot be same!!");
     }
     else{
+        //let roll = /[0-9]{10}$/;
+        //let name = /[a-z][A-Z]$/;
+        //let po = /[0-9]{4}$/;
+        //let stream = /[A-B]$/;
+        if(!($('#Roll')[0].value).match(/^\d{10}$/)){
+            alert("Roll number must be of 10 digits and must include only integers!!");
+            return;
+        }
+        /*if(!name.test(document.getElementById('Name').value)){
+            alert("Name must include only Alphabets!!");
+            return;
+        }*/
+        if(!($('#PO')[0].value).match(/^\d{4}$/)){
+            alert("Year must include only integers of length four!!");
+            return;
+        }
+        /*if(!stream.test($('#Stream')[0].value)){
+            alert("Stream must include only Alphabets!!");
+            return;
+        }*/
         //let tr = "<tr>";
         //let chk = "<td> <input type = 'checkbox' name='box' class='box'></td>";
         /*let roll = "<td>"+$('#Roll')[0].value+"</td>";
@@ -35,6 +55,9 @@ let del = () => {
         count = count - chck.length;
         //console.log(count);
         chck.closest('tr').remove();
+        if($('th input:checked').is(':checked')){
+            $('th input:checked').prop('checked', false);
+        }
     }
     else
         alert("Select rows to be deleted!!")
