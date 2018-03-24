@@ -1,19 +1,42 @@
-<!Doctype HTML>
-<HTML>
+<!doctype HTML>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
         </script>
         <script type="text/javascript" src = "js/main.js"></script>
-        <script type="stylesheet" src = "css/main.css"></script>
+        <script type="stylesheet" src = "css/styles.css"></script>
     </head>
-        
-    <BODY>
-        <H1 align = "center">Student Portal</H1>
-        <div align="Center">
-            <table border="10" id="table">
+
+    <body>
+        <h1 align = "center" class="bg-danger">Student Portal</h1>
+        <br><br>
+        <div align="Center" class="container-fluid">    
+            <p>
+                <input type="text" placeholder="Roll No" id="Roll">
+                <input type="text" placeholder="Name" id="Name">
+                <input type="number" placeholder="Passing Out" id="PO">
+                <input type="text" placeholder="Stream" id="Stream">
+            </p>
+        </div>
+        <br><br>
+        <div align="Center" class="container-fluid">
+            <p>
+                <input type="button" onclick="add()" value="ADD" name="addToTable" class="btn btn-default">
+                <input type="button" onclick="del()" value="DEL" name="delFromTable" class="btn btn-default">
+                <input type="button" onclick="edit()" value = "EDIT" name="editTable" class="btn btn-default">
+                <input type="button" onclick="setValues()" value = "ClearFields" name="clearAll" class="btn btn-default">
+            </p>
+        </div>
+        <div align="Center" class="container-fluid bg-info">
+            <table class="table" id='table'>
             <thead>
                 <tr id="r1">
                     <th>Select All <input type="checkbox" id="Check" onClick="checkAll($(this));"></th>
@@ -25,21 +48,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="checkbox" name="box" class="box" onclick="check($(this));"></td>
+                    <td><input type="checkbox" name="box" class="box" onclick="check();"></td>
                     <td>1510991114</td>
                     <td>Aroosh Rana</td>
                      <td>2019</td>
                     <td>CSE</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="box" class="box" onclick="check($(this));"></td>
+                    <td><input type="checkbox" name="box" class="box" onclick="check();"></td>
                     <td>1510991115</td>
                     <td>Arpan Gupta</td>
                     <td>2019</td>
                     <td>CSE</td>
                 </tr>
                 <tr>
-                  <td><input type="checkbox" name="box" class="box" onclick="check($(this));"></td>
+                  <td><input type="checkbox" name="box" class="box" onclick="check();"></td>
                   <td>1510991122</td>
                   <td>Arun Dadhwal</td>
                   <td>2019</td>
@@ -48,21 +71,6 @@
             </tbody>
             </table>
         </div>
-        <div align="Center">    
-            <p>
-                <input type="text" placeholder="Roll No" id="Roll">
-                <input type="text" placeholder="Name" id="Name">
-                <input type="text" placeholder="Passing Out" id="PO">
-                <input type="text" placeholder="Stream" id="Stream">
-            </p>
-        </div>
-        <div align="Center">
-            <p>
-                <input type="button" onclick="add()" value="ADD" name="addToTable">
-                <input type="button" onclick="del()" value="DEL" name="delFromTable">
-                <input type="button" onclick="edit()" value = "EDIT" name="editTable">
-                <input type="button" onclick="setValues()" value = "ClearFields" name="clearAll">
-            </p>
-        </div>
-    </BODY>
-</HTML>
+        
+    </body>
+</html>
