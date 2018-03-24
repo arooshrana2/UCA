@@ -38,11 +38,11 @@ let add = () => {
        let tab = $("#table");
         //tab.append(tr+chk+roll+name+po+stream+tr1);
         tab.append(`<tr>
-                    <td> <input type = 'checkbox' name='box' class='box'> </td>
-                    <td> ${$('#Roll')[0].value} </td>
-                    <td> ${$('#Name')[0].value} </td>
-                    <td> ${$('#PO')[0].value} </td>
-                    <td> ${$('#Stream')[0].value} </td>
+                    <td><input type = 'checkbox' name='box' class='box'> </td>
+                    <td>${$('#Roll')[0].value}</td>
+                    <td>${$('#Name')[0].value}</td>
+                    <td>${$('#PO')[0].value}</td>
+                    <td>${$('#Stream')[0].value}</td>
                 </tr>`);
                 count++;
                 setValues();
@@ -133,12 +133,12 @@ let search = (no) => {
     for(let i in rows){
         if(i == "length") break;
         let num = rows[i].children[1].innerHTML;
-        console.log(num);
+        //console.log(num);
         if(num == no){
-            console.log("called 1");
+            //console.log("called 1");
             return 1;
         }
     }
-    console.log(`called 0 ${no}`);
+    //console.log(`called 0 ${no}`);
     return 0;
 }
