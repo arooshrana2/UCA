@@ -1,6 +1,6 @@
 var count = 3;
 
-let add = () => {
+const add = () => {
     if($('#Roll')[0].value==""||$('#Name')[0].value==""||
     $('#Stream')[0].value==""||$('#PO')[0].value==""){
         fillAll();
@@ -32,12 +32,12 @@ let add = () => {
         }
 
         let tab = $("#table");
-        tab.append(`<tr>
+        tab.append(`<tr class='success'>
                     <td><input type = 'checkbox' name='box' class='box'> </td>
                     <td>${$('#Roll')[0].value}</td>
                     <td>${$('#Name')[0].value}</td>
                     <td>${$('#PO')[0].value}</td>
-                    <td>${$('#Stream')[0].value}</td>
+                    <td>${$('#Stream')[0].value.toUpperCase()}</td>
                 </tr>`);
                 count++;
                 setValues();
@@ -45,14 +45,14 @@ let add = () => {
     
 }
 
-let checkPattern = ()=>{
+const checkPattern = ()=>{
     if(!($("#Name").value).test(name)){
         alert("Enter valid value for Name: only alphabets");
         return false;
     }
 }
 
-let del = () => {
+const del = () => {
     let chck = $('td input:checked');
     if(chck.length > 0){
         count = count - chck.length;
@@ -65,7 +65,7 @@ let del = () => {
         alert("Select rows to be deleted!!")
 }
 
-let edit = () =>{
+const edit = () =>{
     let not = 0;
     let no = $('#Roll')[0].value;
     if(no==""){
@@ -95,7 +95,7 @@ let edit = () =>{
         setValues();
 }
 
-let check = ()=>{
+const check = ()=>{
     let len = $('td input:checked').length;
     if(len == count){
         $('#Check').prop("checked", true);
@@ -105,7 +105,7 @@ let check = ()=>{
     }
 }
 
-let checkAll = (cb) => {
+const checkAll = (cb) => {
     let checkBoxes = document.getElementsByName('box');
     if(cb.is(':checked')){
         $("input[class='box']").prop("checked", true);
@@ -115,19 +115,19 @@ let checkAll = (cb) => {
     }
 }
 
-let fillAll = ()=>{
+const fillAll = ()=>{
     alert("Fill all the text fields with appropriate values.!");
 }
 
-let setValues = ()=>{
+const setValues = ()=>{
     $("#Roll").prop("placeholder", "Roll No").val("").blur();
     $("#Name").prop("placeholder", "Name").val("").blur();
     $("#PO").prop("placeholder", "Passing Out").val("").blur();
     $("#Stream").prop("placeholder", "Stream").val("").blur();
 }
 
-let search = (no) => {
-    let rows = document.getElementsByTagName('tr');
+const search = (no) => {
+    let rows = $('tr');
     for(let i in rows){
         if(i == "length") break;
         let num = rows[i].children[1].innerHTML;
