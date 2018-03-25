@@ -10,9 +10,9 @@ const add = () => {
     }
     else{
         let rollTest = /^[0-9]{10}$/.test($('#Roll')[0].value);
-        let nameTest = /[a-z A-Z]+/.test($('#Name')[0].value);
+        let nameTest = /^[a-z A-Z]*$/.test($('#Name')[0].value);
         let poTest = /^[0-9]{4}$/.test($('#PO')[0].value);
-        let streamTest = /[A-Z a-z]+/.test($('#Stream')[0].value);
+        let streamTest = /^[A-Z a-z]*$/.test($('#Stream')[0].value);
 
         if(!rollTest){
             alert("Roll number must be of 10 digits and must include only integers!!");
